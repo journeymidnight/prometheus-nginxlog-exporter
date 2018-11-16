@@ -9,4 +9,4 @@ FROM scratch
 COPY --from=0 /work/prometheus-nginxlog-exporter /prometheus-nginxlog-exporter
 
 EXPOSE 4040
-ENTRYPOINT ["/prometheus-nginxlog-exporter"]
+ENTRYPOINT ["/prometheus-nginxlog-exporter", "--config-file=/work/nginx.hcl", "--enable-experimental"]
